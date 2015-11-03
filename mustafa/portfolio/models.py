@@ -12,7 +12,7 @@ class BasicInformation(models.Model):
     image = models.ImageField()
 
 
-class Projects(models.Model):
+class Project(models.Model):
     name = models.CharField(max_length=25)
     description = models.CharField(max_length=200)
     link = models.URLField()
@@ -28,7 +28,7 @@ class Experience(models.Model):
     URL = models.URLField()
 
 
-class Languages(models.Model):
+class Language(models.Model):
     name = models.CharField(max_length=10)
     experience = models.ForeignKey(Experience)
-    projects = models.ForeignKey(Projects)
+    projects = models.ForeignKey(Project)
