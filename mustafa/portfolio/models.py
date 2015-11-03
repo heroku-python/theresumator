@@ -1,7 +1,9 @@
 from django.db import models
+from django.contrib.sites.models import Site
 
 
 class BasicInformation(models.Model):
+    site = models.OneToOneField(Site)
     name = models.CharField(max_length=20)
     short_bio = models.CharField(max_length=200)
     email = models.EmailField()
