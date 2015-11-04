@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-{{ basic_information }}
-</body>
-</html>
+{% extends "portfolio/base.html" %}
+
+{% block title %}Mustafa S{% endblock %}
+
+{% block extrabody %}{{ basic_information }}{% endblock %}
