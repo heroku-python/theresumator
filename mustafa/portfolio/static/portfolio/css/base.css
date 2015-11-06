@@ -18,6 +18,9 @@ div{
     font-size: 13px;
     margin-bottom: 25px;
 }
+.side-bar-icon{
+    color: #555555;
+}
 .side-bar-items{
      -webkit-user-select: none; /* Chrome/Safari */
     -moz-user-select: none; /* Firefox */
@@ -31,6 +34,12 @@ div{
     text-transform: uppercase;
     letter-spacing: .1rem;
     margin-bottom: 10px;
+}
+.side-bar-links a {
+    color: #000000;
+}
+.side-bar-links a:hover {
+    color: #555555;
 }
 .side-bar-item.hvr-grow{
     display: block;
