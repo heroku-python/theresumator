@@ -51,17 +51,23 @@ Email: AmmsA@users.noreply.github.com
         <div class="row whole-content" >
             <div class="four columns side-line side-bar">
                 <div class="thumbnail">
+                    {% if basic_information.image != None %}
                     <div class="row">
-                        <div class="eleven columns"><img class="thumbnail-container img-circle"
-                                                       src="{% static "portfolio/img/profile_picture_yaOhbcR.jpeg" %}"></div>
+                        <div class="eleven columns">
+                            <img class="thumbnail-container img-circle"
+                                 src="{% static "portfolio/img/profile_picture_yaOhbcR.jpeg" %}">
+                        </div>
                     </div>
+                    {% endif %}
                     <div class="row">
                         <div class="eleven columns"><h4>{{ basic_information.name }}</h4></div>
                     </div>
                 </div>
+                {% if basic_information.short_bio != None %}
                 <div class="side-bar-bio row">
-                    <div class="eleven columns">Computer Science Alumni</div>
+                    <div class="eleven columns">{{ basic_information.short_bio }}</div>
                 </div>
+                {% endif %}
                 <div class="side-bar-items">
                     <div class="row side-bar-item hvr-grow">
                         <div class="two columns side-bar-icon"><span class="lnr lnr-mustache"></span></div>
