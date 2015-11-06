@@ -10,7 +10,7 @@ class BasicInformation(models.Model):
                                  verbose_name=_("short bio"))
     email = models.EmailField(blank=True)
     github = models.URLField(blank=True)
-    linkedIn = models.URLField(blank=True)
+    linkedin = models.URLField(blank=True)
     image = models.ImageField()
 
     def __repr__(self):

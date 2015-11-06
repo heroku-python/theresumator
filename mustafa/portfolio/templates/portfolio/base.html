@@ -80,22 +80,30 @@ Email: AmmsA@users.noreply.github.com
                         <div class="two columns side-bar-icon"><span class="lnr lnr-briefcase"></span></div>
                         <div class="nine columns">Experience</div>
                     </div>
+                    {% if basic_information.email != None or basic_information.github != None or basic_information.linkedin != None%}
                     <div class="side-bar-links">
-                        <div class="row side-bar-item hvr-grow">
-                            <div class="two columns side-bar-icon"><span class="lnr lnr-envelope"></span></div>
-                            <div class="nine columns">Email</div>
-                        </div>
+                        <a href="mailto:{{ basic_information.email }}">
+                            <div class="row side-bar-item hvr-grow">
+                                <div class="two columns side-bar-icon"><span class="lnr lnr-envelope"></span></div>
+                                <div class="nine columns">Email</div>
+                            </div>
+                        </a>
                         <a href="{{ basic_information.github }}">
                             <div class="row side-bar-item hvr-grow">
                                 <div class="two columns side-bar-icon"><span class="lnr lnr-link"></span></div>
                                 <div class="nine columns">Github</div>
                             </div>
                         </a>
-                        <div class="row side-bar-item hvr-grow">
-                            <div class="two columns side-bar-icon"><span class="lnr lnr-link"></span></div>
-                            <div class="nine columns">LinkedIn</div>
-                        </div>
+                        {% if basic_information.linkedin != None %}
+                        <a href="{{ basic_information.linkedin}}">
+                            <div class="row side-bar-item hvr-grow">
+                                <div class="two columns side-bar-icon"><span class="lnr lnr-link"></span></div>
+                                <div class="nine columns">LinkedIn</div>
+                            </div>
+                        </a>
+                        {% endif %}
                     </div>
+                    {% endif %}
                 </div>
 
                 {% block extrasidebar %}{% endblock %}
