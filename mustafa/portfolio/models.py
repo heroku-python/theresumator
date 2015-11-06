@@ -28,7 +28,20 @@ class Education(models.Model):
     gpa = models.CharField(max_length=10, null=True, blank=True, default=None)
 
     def __repr__(self):
-        return '<Project: %s>' % self.name
+        return '<Education: %s>' % self.name
+
+    def __str__(self):
+        return self.name
+
+
+class Publication(models.Model):
+    title = models.CharField(max_length=50)
+    Authors = models.CharField(max_length=100, null=True, blank=True, default=None)
+    venue = models.CharField(max_length=20, null=True, blank=True, default=None)
+    year = models.CharField(max_length=4, null=True, blank=True, default=None)
+
+    def __repr__(self):
+        return '<Publication: %s>' % self.name
 
     def __str__(self):
         return self.name

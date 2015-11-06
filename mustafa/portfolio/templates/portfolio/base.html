@@ -86,6 +86,12 @@ Email: AmmsA@users.noreply.github.com
                         <div class="two columns side-bar-icon"><span class="lnr lnr-briefcase"></span></div>
                         <div class="nine columns">Experience</div>
                     </div>
+                    {% if publications %}
+                    <div class="row side-bar-item hvr-grow">
+                        <div class="two columns side-bar-icon"><span class="lnr lnr-layers"></span></div>
+                        <div class="nine columns">Publications</div>
+                    </div>
+                    {% endif %}
                     {% if basic_information.email != None or basic_information.github != None or basic_information.linkedin != None%}
                     <div class="side-bar-links">
                         <a href="mailto:{{ basic_information.email }}">
