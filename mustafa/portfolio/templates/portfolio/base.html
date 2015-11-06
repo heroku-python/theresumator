@@ -29,6 +29,7 @@ Email: AmmsA@users.noreply.github.com
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/normalize.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/skeleton.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.0.2/css/hover-min.css">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/base.css" %}">
 
@@ -48,43 +49,46 @@ Email: AmmsA@users.noreply.github.com
     <div class="container">
         <div class="row whole-content" >
             <div class="four columns side-line">
-                <div class="row">
-                    <div class="eleven columns"><img class="thumbnail-container img-circle"
-                                                   src="{% static "portfolio/img/profile_picture_yaOhbcR.jpeg" %}"></div>
-                </div>
-                <div class="row">
-                    <div class="eleven columns"><h4>{{ basic_information.name }}</h4></div>
+                <div class="thumbnail">
+                    <div class="row">
+                        <div class="eleven columns"><img class="thumbnail-container img-circle"
+                                                       src="{% static "portfolio/img/profile_picture_yaOhbcR.jpeg" %}"></div>
+                    </div>
+                    <div class="row">
+                        <div class="eleven columns"><h4>{{ basic_information.name }}</h4></div>
+                    </div>
                 </div>
                 <div class="side-bar side-bar-bio row">
                     <div class="eleven columns">Computer Science Alumni</div>
                 </div>
-                <div class="row side-bar side-bar-item ">
-                    <div class="two columns"><span class="lnr lnr-mustache"></span></div>
+                <div class="row side-bar side-bar-item hvr-grow">
+                    <div class="two columns side-bar-icon"><span class="lnr lnr-mustache"></span></div>
                     <div class="nine columns">About</div>
                 </div>
-                <div class="row side-bar side-bar-item ">
-                    <div class="two columns"><span class="lnr lnr-graduation-hat"></span></div>
+                <div class="row side-bar side-bar-item hvr-grow">
+                    <div class="two columns side-bar-icon"><span class="lnr lnr-graduation-hat"></span></div>
                     <div class="nine columns">Education</div>
+
                 </div>
-                <div class="row side-bar side-bar-item ">
-                    <div class="two columns"><span class="lnr lnr-code"></span></div>
+                <div class="row side-bar side-bar-item hvr-grow">
+                    <div class="two columns side-bar-icon"><span class="lnr lnr-code"></span></div>
                     <div class="nine columns">Projects</div>
                 </div>
-                <div class="row side-bar side-bar-item ">
-                    <div class="two columns"><span class="lnr lnr-briefcase"></span></div>
+                <div class="row side-bar side-bar-item hvr-grow">
+                    <div class="two columns side-bar-icon"><span class="lnr lnr-briefcase"></span></div>
                     <div class="nine columns">Experience</div>
                 </div>
                 <div class="side-bar-links">
-                    <div class="row side-bar side-bar-item">
-                        <div class="two columns"><span class="lnr lnr-envelope"></span></div>
+                    <div class="row side-bar side-bar-item hvr-grow">
+                        <div class="two columns side-bar-icon"><span class="lnr lnr-envelope"></span></div>
                         <div class="nine columns">Email</div>
                     </div>
-                    <div class="row side-bar side-bar-item ">
-                        <div class="two columns"><span class="lnr lnr-link"></span></div>
+                    <div class="row side-bar side-bar-item hvr-grow">
+                        <div class="two columns side-bar-icon"><span class="lnr lnr-link"></span></div>
                         <div class="nine columns">Github</div>
                     </div>
-                    <div class="row side-bar side-bar-item ">
-                        <div class="two columns"><span class="lnr lnr-link"></span></div>
+                    <div class="row side-bar side-bar-item hvr-grow">
+                        <div class="two columns side-bar-icon"><span class="lnr lnr-link"></span></div>
                         <div class="nine columns">LinkedIn</div>
                     </div>
                 </div>

@@ -16,6 +16,9 @@
 .side-bar-item {
     margin-bottom: 10px;
 }
+.side-bar-item.hvr-grow{
+    display: block;
+}
 .side-bar-links {
     margin-top: 100px;
 }
@@ -37,4 +40,18 @@
     min-height: 120px;
     max-height: inherit;
     border-radius: 50%;
+}
+
+@media only screen and (max-width: 550px) {
+    .side-bar-icon {
+        display: none;
+    }
+    .side-line {
+        border-right: none;
+        border-bottom: thick solid #ff0000;
+        margin-bottom: 50px;
+    }
+    .thumbnail {
+        text-align: center;
+    }
 }

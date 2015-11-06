@@ -20,6 +20,20 @@ class BasicInformation(models.Model):
         return self.name.title()
 
 
+class Education(models.Model):
+    name = models.CharField(max_length=50)
+    degree = models.CharField(max_length=10, null=True, blank=True, default=None)
+    abbreviation = models.CharField(max_length=10, null=True, blank=True, default=None)
+    major = models.CharField(max_length=15, null=True, blank=True, default=None)
+    gpa = models.CharField(max_length=10, null=True, blank=True, default=None)
+
+    def __repr__(self):
+        return '<Project: %s>' % self.name
+
+    def __str__(self):
+        return self.name
+
+
 class Project(models.Model):
     name = models.CharField(max_length=25)
     description = models.CharField(max_length=200,
