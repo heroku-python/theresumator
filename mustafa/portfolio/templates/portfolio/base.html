@@ -1,6 +1,11 @@
 {% load i18n %}
 {% load staticfiles %}
 <!DOCTYPE html>
+<!--
+Portfolio v0.1 | MIT License | https://github.com/AmmsA/portfolio
+Author: Mustafa S
+Email: AmmsA@users.noreply.github.com
+-->
 {% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
@@ -22,8 +27,10 @@
 
     <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/normalize.css.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/normalize.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/skeleton.css" %}">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/base.css" %}">
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -39,17 +46,63 @@
     <!-- Primary Page Layout
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
-        <div class="row">
-            <div class="one-half column" style="margin-top: 25%">
-                <h4>Basic Page</h4>
+        <div class="row whole-content" >
+            <div class="four columns side-line">
+                <div class="row">
+                    <div class="eleven columns"><img class="thumbnail-container img-circle"
+                                                   src="{% static "portfolio/img/profile_picture_yaOhbcR.jpeg" %}"></div>
+                </div>
+                <div class="row">
+                    <div class="eleven columns"><h4>{{ basic_information.name }}</h4></div>
+                </div>
+                <div class="side-bar side-bar-bio row">
+                    <div class="eleven columns">Computer Science Alumni</div>
+                </div>
+                <div class="row side-bar side-bar-item ">
+                    <div class="two columns"><span class="lnr lnr-mustache"></span></div>
+                    <div class="nine columns">About</div>
+                </div>
+                <div class="row side-bar side-bar-item ">
+                    <div class="two columns"><span class="lnr lnr-graduation-hat"></span></div>
+                    <div class="nine columns">Education</div>
+                </div>
+                <div class="row side-bar side-bar-item ">
+                    <div class="two columns"><span class="lnr lnr-code"></span></div>
+                    <div class="nine columns">Projects</div>
+                </div>
+                <div class="row side-bar side-bar-item ">
+                    <div class="two columns"><span class="lnr lnr-briefcase"></span></div>
+                    <div class="nine columns">Experience</div>
+                </div>
+                <div class="side-bar-links">
+                    <div class="row side-bar side-bar-item">
+                        <div class="two columns"><span class="lnr lnr-envelope"></span></div>
+                        <div class="nine columns">Email</div>
+                    </div>
+                    <div class="row side-bar side-bar-item ">
+                        <div class="two columns"><span class="lnr lnr-link"></span></div>
+                        <div class="nine columns">Github</div>
+                    </div>
+                    <div class="row side-bar side-bar-item ">
+                        <div class="two columns"><span class="lnr lnr-link"></span></div>
+                        <div class="nine columns">LinkedIn</div>
+                    </div>
+                </div>
 
-                <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add
-                    some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton
-                        documentation</a>.</p>
+                {% block extrasidebar %}{% endblock %}
+            </div>
+            <div class="eight columns content">
+                {% spaceless %}{% block extracontent %}
+                <p>
+                    This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to
+                    add
+                    some content! If you need some help hit up the
+                    <a href="http://www.getskeleton.com">Skeleton documentation</a>.
+                </p>
+                {% endblock %}{% endspaceless %}
             </div>
         </div>
     </div>
-
     <!-- End Document
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     {% block extrabody %}{% endblock %}
