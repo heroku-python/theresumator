@@ -41,8 +41,6 @@ INSTALLED_APPS = (
     'portfolio',
 
     'solo',
-    'html_field'
-
 )
 
 MIDDLEWARE_CLASSES = (
@@ -110,4 +108,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     '/var/www/static/',
+)
+
+
+FIXTURE_DIRS = (
+   '/portfolio/fixtures/',
 )

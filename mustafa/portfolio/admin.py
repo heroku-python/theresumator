@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.db.utils import OperationalError
 from solo.admin import SingletonModelAdmin
 
 from models import BasicInformation
@@ -14,4 +15,8 @@ admin.site.register(Language)
 
 
 # make BasicInformation singleton if it does not already exist
-basic_information = BasicInformation.get_solo()
+try:
+    basic_information = BasicInformation.get_solo()
+except OperationalError:
+    pass
+

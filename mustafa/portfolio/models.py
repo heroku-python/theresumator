@@ -1,10 +1,6 @@
 from django.db import models
 from solo.models import SingletonModel
 from django.utils.translation import ugettext_lazy as _
-from html_field.db.models import HTMLField
-from html_field import html_cleaner
-
-c = html_cleaner.HTMLCleaner(allow_tags=['a', 'img', 'em', 'strong', 'p', 'h5', 'h4', 'h3', 'h2', 'h1'])
 
 
 class BasicInformation(SingletonModel):
@@ -13,11 +9,11 @@ class BasicInformation(SingletonModel):
                                  blank=True,
                                  verbose_name=_("short bio"),
                                  default="My short bio")
-    long_bio = HTMLField(c, blank=True,
-                         verbose_name=_("long bio"),
-                         default="My long bio")
+    long_bio = models.TextField(blank=True,
+                                verbose_name=_("long bio"),
+                                default="My long bio")
     email = models.EmailField(default="email@example.com")
-    github = models.URLField(null=True),
+    github = models.URLField(null=True)
     linkedin = models.URLField(null=True)
     image = models.ImageField(null=True)
 
