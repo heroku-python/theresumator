@@ -6,8 +6,9 @@ from django.utils.translation import ugettext_lazy as _
 class BasicInformation(models.Model):
     site = models.OneToOneField(Site)
     name = models.CharField(max_length=20)
-    short_bio = models.CharField(max_length=200,
-                                 verbose_name=_("short bio"))
+    short_bio = models.CharField(max_length=100,
+                                      verbose_name=_("short bio"))
+    long_bio = models.TextField(verbose_name=_("long bio"))
     email = models.EmailField(blank=True)
     github = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
@@ -44,12 +45,12 @@ class Publication(models.Model):
         return '<Publication: %s>' % self.name
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class Project(models.Model):
     name = models.CharField(max_length=25)
-    description = models.CharField(max_length=200,
+    description = models.TextField(max_length=200,
                                    verbose_name=_("description"))
     link = models.URLField()
     picture = models.ImageField()
@@ -66,7 +67,7 @@ class Experience(models.Model):
     role = models.CharField(max_length=20)
     start_date = models.TimeField(verbose_name=_("start date"))
     end_date = models.TimeField(verbose_name=_("end date"))
-    description = models.CharField(max_length=200,
+    description = models.TextField(max_length=200,
                                    verbose_name=_("description"))
     URL = models.URLField(blank=True)
 
