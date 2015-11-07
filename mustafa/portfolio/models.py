@@ -8,7 +8,7 @@ c = html_cleaner.HTMLCleaner(allow_tags=['a', 'img', 'em', 'strong', 'p', 'h5', 
 
 
 class BasicInformation(SingletonModel):
-    name = models.CharField(max_length=20, default="John Smith")
+    name = models.CharField(max_length=25, default="John Smith")
     short_bio = models.CharField(max_length=100,
                                  blank=True,
                                  verbose_name=_("short bio"),
@@ -57,7 +57,7 @@ class Publication(models.Model):
 
 
 class Project(models.Model):
-    name = models.CharField(max_length=25)
+    name = models.CharField(max_length=50)
     description = models.TextField(default=None,
                                    blank=True,
                                    verbose_name=_("description"))
@@ -72,8 +72,8 @@ class Project(models.Model):
 
 
 class Experience(models.Model):
-    company = models.CharField(max_length=20)
-    role = models.CharField(max_length=20)
+    company = models.CharField(max_length=50)
+    role = models.CharField(max_length=150)
     start_date = models.TimeField(verbose_name=_("start date"))
     end_date = models.TimeField(verbose_name=_("end date"))
     description = models.TextField(default=None,
@@ -88,7 +88,7 @@ class Experience(models.Model):
 
 
 class Language(models.Model):
-    name = models.CharField(max_length=10)
+    name = models.CharField(max_length=20)
     experience = models.ForeignKey(Experience, null=True, blank=True, default=None)
     projects = models.ForeignKey(Project, null=True, blank=True, default=None)
 
