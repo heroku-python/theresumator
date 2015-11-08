@@ -1,0 +1,34 @@
+{% extends "portfolio/base.html" %}
+{% load staticfiles %}
+{% block extrastyles %}<link rel="stylesheet" type="text/css" href="{% static "portfolio/css/portfolio-publications.css" %}">{% endblock %}
+{% block extrafonts %}<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>{% endblock %}
+
+{% block title %}Mustafa S{% endblock %}
+
+{% block extracontent %}
+    <h5>Publications</h5>
+    {% for publication in portfolio_publication %}
+    <div class="row portfolio-publication">
+        {% if publication.link %}<a href="{{ publication.link }}">{% endif %}
+            <div class="eleven columns">
+                <div class="row">
+                    <div class="ten columns limit"><b>{{ publication.title }}</b></div>
+                    <div class="two columns date right-text">
+                        {% if publication.year %}{{ publication.year }}{% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns authors">{{ publication.authors }}</div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns conference"><p>{{ publication.conference }}</p></div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns description"><p>{{ publication.abstract }}</p></div>
+                </div>
+            </div>
+        {% if publication.link %}</a>{% endif %}
+    </div>
+    {% endfor %}
+
+{% endblock %}

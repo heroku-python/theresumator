@@ -1,3 +1,6 @@
+b{
+    font-weight:700;
+}
 /* turn on unselectable */
 div{
 
@@ -37,11 +40,11 @@ div{
 }
 .side-bar-links a,
 .side-bar-items a{
-    color: #000000;
+    color: #555555;
 }
 .side-bar-links a:hover,
 .side-bar-items a:hover{
-    color: #555555;
+    color: #000000;
 }
 .side-bar-item.hvr-grow{
     display: block;
@@ -59,7 +62,6 @@ div{
     border-right: thick solid #ff0000;
 }
 .img-circle {
-    width:inherit;
     border-radius: 50%;
 }
 .thumbnail-container {
@@ -68,7 +70,12 @@ div{
     max-height: inherit;
     border-radius: 50%;
 }
-
+.center{
+    text-align: center;
+}
+.right-text{
+    text-align: right;
+}
 @media only screen and (max-width: 550px) {
     .side-bar-icon {
         display: none;

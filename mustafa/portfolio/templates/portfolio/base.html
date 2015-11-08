@@ -22,8 +22,8 @@ Email: AmmsA@users.noreply.github.com
 
     <!-- FONT
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    {% block fonts %}{% endblock %}
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css">
+    {% block extrafonts %}{% endblock %}
 
     <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -32,7 +32,7 @@ Email: AmmsA@users.noreply.github.com
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.0.2/css/hover-min.css">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/base.css" %}">
-    {% block extrastyle %}{% endblock %}
+    {% block extrastyles %}{% endblock %}
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -99,7 +99,7 @@ Email: AmmsA@users.noreply.github.com
                         </div>
                     </a>
                     {% endif %}
-                    {% if portfolio_publications %}
+                    {% if portfolio_publication %}
                     <a href="/publications">
                         <div class="row side-bar-item hvr-grow">
                             <div class="two columns side-bar-icon"><span class="lnr lnr-layers"></span></div>

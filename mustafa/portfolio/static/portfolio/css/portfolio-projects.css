@@ -1,0 +1,29 @@
+.portfolio-project{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #555555;
+}
+.portfolio-project a,
+.portfolio-project a{
+    color: #555555;
+}
+.portfolio-project a:hover,
+.portfolio-project a:hover{
+    color: #000000;
+}
+.portfolio-project p{
+    font-size: 14px;
+}
+.portfolio-project .description{
+    min-height: 120px;
+    border-bottom: thin solid #eeeeee;
+}
+.portfolio-project .date{
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+.portfolio-project .limit{
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+

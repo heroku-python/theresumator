@@ -1,9 +1,33 @@
 {% extends "portfolio/base.html" %}
+{% load staticfiles %}
+{% block extrastyles %}<link rel="stylesheet" type="text/css" href="{% static "portfolio/css/portfolio-projects.css" %}">{% endblock %}
+{% block extrafonts %}<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>{% endblock %}
 
 {% block title %}Mustafa S{% endblock %}
 
 {% block extracontent %}
-{{ portfolio_basicinformation }}
-{{ portfolio_projects }}
-{{ portfolio_languages }}
+    <h5>Projects</h5>
+    {% for project in portfolio_project %}
+    <div class="row portfolio-project">
+        {% if project.link %}<a href="{{ project.link }}">{% endif %}
+            <div class="eleven columns">
+                <div class="row">
+                    <div class="seven columns limit"><b>{{ project.name }}</b></div>
+                    <div class="five columns date right-text">
+                        {% if project.start_date and not project.end_date%}{{ project.start_date }} - <i>Ongoing</i>
+                        {% elif project.start_date and project.end_date%}{{ project.start_date }} - {{ project.end_date }}
+                        {% elif project.end_date and not project.start_date%}{{ project.end_date }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns description"><p>{{ project.description }}</p></div>
+                </div>
+            </div>
+        {% if project.link %}</a>{% endif %}
+    </div>
+    {% endfor %}
+
+
+{{ portfolio_language }}
 {% endblock %}

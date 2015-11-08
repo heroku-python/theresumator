@@ -1,0 +1,36 @@
+.portfolio-experience {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #555555;
+}
+.portfolio-experience a,
+.portfolio-experience a{
+    color: #555555;
+}
+.portfolio-experience a:hover,
+.portfolio-experience a:hover{
+    color: #000000;
+}
+.portfolio-experience p{
+    font-size: 14px;
+}
+.portfolio-experience .description{
+    min-height: 120px;
+    border-bottom: thin solid #eeeeee;
+}
+.portfolio-experience .date{
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+.portfolio-experience .limit{
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.portfolio-experience .image{
+    height:inherit;
+}
+.portfolio-experience img{
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+}
