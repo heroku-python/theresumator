@@ -23,11 +23,11 @@ def projects(request):
     projects_list = Project.objects.all()
     languages = Language.objects.all()
     template = loader.get_template('portfolio/projects.html')
-    context = RequestContext(request, {
-        'portfolio_basicinformation': basic_information,
-        'portfolio_project': projects_list,
-        'portfolio_experience': languages,
-    })
+    context_dict = {'portfolio_basicinformation': basic_information,
+                    'portfolio_project': projects_list,
+                    'portfolio_experience': languages,
+                    }
+    context = RequestContext(request, utils.used_models(context_dict))
     return HttpResponse(template.render(context))
 
 
@@ -36,9 +36,10 @@ def experience(request):
     experience_list = Experience.objects.all()
     languages = Language.objects.all()
     template = loader.get_template('portfolio/experience.html')
-    context = RequestContext(request, {
-        'portfolio_basicinformation': basic_information,
-        'portfolio_experience': experience_list,
-        'portfolio_language': languages,
-    })
+    context_dict = {'portfolio_basicinformation': basic_information,
+                    'portfolio_experience': experience_list ,
+                    'portfolio_language': languages,
+                    }
+    context = RequestContext(request, utils.used_models(context_dict))
+
     return HttpResponse(template.render(context))
