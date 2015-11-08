@@ -1,9 +1,7 @@
-{% load i18n %}
-{% load staticfiles %}
-{% load base_extras %}
 <!DOCTYPE html>
+{% load i18n %}{% load staticfiles %}{% load base_extras %}
 <!--
-Portfolio v0.1 | MIT License | https://github.com/AmmsA/portfolio
+Portfolio v{% get_version %} | MIT License | https://github.com/AmmsA/portfolio
 Author: Mustafa S
 Email: AmmsA@users.noreply.github.com
 -->
@@ -15,7 +13,7 @@ Email: AmmsA@users.noreply.github.com
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <meta name="description"
-          content="{% block metadescription %}Portfolio page of {{ portfolio_basicinformation.name }} containing personal projects and experiences {% endblock %}">
+          content="{% block metadescription %}Portfolio page of {{ portfolio_basicinformation.name }} containing personal projects and experiences{% endblock %}">
     <meta name="author" content="{% block metaauthor %}{{ portfolio_basicinformation.name }}{% endblock %}">
 
     <!-- Mobile Specific Metas
@@ -25,6 +23,7 @@ Email: AmmsA@users.noreply.github.com
     <!-- FONT
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    {% block fonts %}{% endblock %}
 
     <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -33,15 +32,15 @@ Email: AmmsA@users.noreply.github.com
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.0.2/css/hover-min.css">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/base.css" %}">
+    {% block extrastyle %}{% endblock %}
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="{% static "portfolio/img/favicon.png" %}">
-
-    {% block extrastyle %}{% endblock %}
-    {% block extrahead %}{% endblock %}
     {% block blockbots %}
-    <meta name="robots" content="nocache,noarchive,noimageindex"/>{% endblock %}
+    <meta name="robots" content="nocache,noarchive,noimageindex"/>
+    {% endblock %}
+    {% block extrahead %}{% endblock %}
 </head>
 
 <body>
@@ -137,11 +136,10 @@ Email: AmmsA@users.noreply.github.com
             </div>
             <div class="eight columns content">
                 {% spaceless %}{% block extracontent %}
+                <h5>Main content</h5>
                 <p>
-                    This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to
-                    add
-                    some content! If you need some help hit up the
-                    <a href="http://www.getskeleton.com">Skeleton documentation</a>.
+                   This is where the main content of the website goes. If you need some help, please go to
+                    <a href="https://github.com/AmmsA/portfolio">Portfolio github page</a>.
                 </p>
                 {% endblock %}{% endspaceless %}
             </div>
