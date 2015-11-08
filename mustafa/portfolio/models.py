@@ -15,7 +15,7 @@ class BasicInformation(SingletonModel):
     email = models.EmailField(default="email@example.com")
     github = models.URLField(null=True)
     linkedin = models.URLField(null=True)
-    image = models.ImageField(null=True)
+    image = models.ImageField(blank=True)
 
     def __repr__(self):
         return '<BasicInformation: %s>' % self.name
@@ -58,7 +58,7 @@ class Project(models.Model):
                                    blank=True,
                                    verbose_name=_("description"))
     link = models.URLField()
-    picture = models.ImageField()
+    picture = models.ImageField(blank=True)
 
     def __repr__(self):
         return '<Project: %s>' % self.name
