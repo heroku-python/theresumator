@@ -15,8 +15,8 @@ Email: AmmsA@users.noreply.github.com
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <meta name="description"
-          content="{% block metadescription %}Portfolio page of {{ basic_information.name }} containing personal projects and experiences {% endblock %}">
-    <meta name="author" content="{% block metaauthor %}{{ basic_information.name }}{% endblock %}">
+          content="{% block metadescription %}Portfolio page of {{ portfolio_basicinformation.name }} containing personal projects and experiences {% endblock %}">
+    <meta name="author" content="{% block metaauthor %}{{ portfolio_basicinformation.name }}{% endblock %}">
 
     <!-- Mobile Specific Metas
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -51,7 +51,7 @@ Email: AmmsA@users.noreply.github.com
         <div class="row whole-content" >
             <div class="four columns side-line side-bar">
                 <div class="thumbnail">
-                    {% if basic_information.image != None %}
+                    {% if portfolio_basicinformation.image != None %}
                     <div class="row">
                         <div class="eleven columns">
                             <img class="thumbnail-container img-circle"
@@ -60,54 +60,70 @@ Email: AmmsA@users.noreply.github.com
                     </div>
                     {% endif %}
                     <div class="row">
-                        <div class="eleven columns"><h4>{{ basic_information.name }}</h4></div>
+                        <div class="eleven columns"><h4>{{ portfolio_basicinformation.name }}</h4></div>
                     </div>
                 </div>
-                {% if basic_information.short_bio != None %}
+                {% if portfolio_basicinformation.short_bio != None %}
                 <div class="side-bar-bio row">
-                    <div class="eleven columns">{{ basic_information.short_bio }}</div>
+                    <div class="eleven columns">{{ portfolio_basicinformation.short_bio }}</div>
                 </div>
                 {% endif %}
                 <div class="side-bar-items">
-                    <div class="row side-bar-item hvr-grow">
-                        <div class="two columns side-bar-icon"><span class="lnr lnr-mustache"></span></div>
-                        <div class="nine columns">About</div>
-                    </div>
-                    <div class="row side-bar-item hvr-grow">
-                        <div class="two columns side-bar-icon"><span class="lnr lnr-graduation-hat"></span></div>
-                        <div class="nine columns">Education</div>
-
-                    </div>
-                    <div class="row side-bar-item hvr-grow">
-                        <div class="two columns side-bar-icon"><span class="lnr lnr-code"></span></div>
-                        <div class="nine columns">Projects</div>
-                    </div>
-                    <div class="row side-bar-item hvr-grow">
-                        <div class="two columns side-bar-icon"><span class="lnr lnr-briefcase"></span></div>
-                        <div class="nine columns">Experience</div>
-                    </div>
-                    {% if publications %}
-                    <div class="row side-bar-item hvr-grow">
-                        <div class="two columns side-bar-icon"><span class="lnr lnr-layers"></span></div>
-                        <div class="nine columns">Publications</div>
-                    </div>
+                    <a href="/">
+                        <div class="row side-bar-item hvr-grow">
+                            <div class="two columns side-bar-icon"><span class="lnr lnr-mustache"></span></div>
+                            <div class="nine columns">About</div>
+                        </div>
+                    </a>
+                    {% if portfolio_education %}
+                    <a href="/education">
+                        <div class="row side-bar-item hvr-grow">
+                            <div class="two columns side-bar-icon"><span class="lnr lnr-graduation-hat"></span></div>
+                            <div class="nine columns">Education</div>
+                        </div>
+                    </a>
+                    <a href="/">
                     {% endif %}
-                    {% if basic_information.email != None or basic_information.github != None or basic_information.linkedin != None%}
+                    {% if portfolio_education.project %}
+                    <a href="/projects">
+                        <div class="row side-bar-item hvr-grow">
+                            <div class="two columns side-bar-icon"><span class="lnr lnr-code"></span></div>
+                            <div class="nine columns">Projects</div>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% if portfolio_experience %}
+                    <a href="/experience">
+                        <div class="row side-bar-item hvr-grow">
+                            <div class="two columns side-bar-icon"><span class="lnr lnr-briefcase"></span></div>
+                            <div class="nine columns">Experience</div>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% if portfolio_publications %}
+                    <a href="/publications">
+                        <div class="row side-bar-item hvr-grow">
+                            <div class="two columns side-bar-icon"><span class="lnr lnr-layers"></span></div>
+                            <div class="nine columns">Publications</div>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% if portfolio_basicinformation.email != None or portfolio_basicinformation.github != None or portfolio_basicinformation.linkedin != None%}
                     <div class="side-bar-links">
-                        <a href="mailto:{{ basic_information.email }}">
+                        <a href="mailto:{{ portfolio_basicinformation.email }}">
                             <div class="row side-bar-item hvr-grow">
                                 <div class="two columns side-bar-icon"><span class="lnr lnr-envelope"></span></div>
                                 <div class="nine columns">Email</div>
                             </div>
                         </a>
-                        <a href="{{ basic_information.github }}">
+                        <a href="{{ portfolio_basicinformation.github }}">
                             <div class="row side-bar-item hvr-grow">
                                 <div class="two columns side-bar-icon"><span class="lnr lnr-link"></span></div>
                                 <div class="nine columns">Github</div>
                             </div>
                         </a>
-                        {% if basic_information.linkedin != None %}
-                        <a href="{{ basic_information.linkedin}}">
+                        {% if portfolio_basicinformation.linkedin != None %}
+                        <a href="{{ portfolio_basicinformation.linkedin}}">
                             <div class="row side-bar-item hvr-grow">
                                 <div class="two columns side-bar-icon"><span class="lnr lnr-link"></span></div>
                                 <div class="nine columns">LinkedIn</div>
@@ -117,7 +133,6 @@ Email: AmmsA@users.noreply.github.com
                     </div>
                     {% endif %}
                 </div>
-
                 {% block extrasidebar %}{% endblock %}
             </div>
             <div class="eight columns content">

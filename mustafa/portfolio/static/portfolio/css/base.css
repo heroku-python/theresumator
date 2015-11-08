@@ -35,10 +35,12 @@ div{
     letter-spacing: .1rem;
     margin-bottom: 10px;
 }
-.side-bar-links a {
+.side-bar-links a,
+.side-bar-items a{
     color: #000000;
 }
-.side-bar-links a:hover {
+.side-bar-links a:hover,
+.side-bar-items a:hover{
     color: #555555;
 }
 .side-bar-item.hvr-grow{

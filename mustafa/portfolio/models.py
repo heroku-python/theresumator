@@ -70,8 +70,8 @@ class Project(models.Model):
 class Experience(models.Model):
     company = models.CharField(max_length=50)
     role = models.CharField(max_length=150)
-    start_date = models.TimeField(verbose_name=_("start date"))
-    end_date = models.TimeField(verbose_name=_("end date"))
+    start_date = models.DateField(verbose_name=_("start date"))
+    end_date = models.DateField(verbose_name=_("end date"))
     description = models.TextField(default=None,
                                    verbose_name=_("description"))
     URL = models.URLField(null=True, blank=True)
@@ -80,7 +80,7 @@ class Experience(models.Model):
         return '<Experience: %s>' % self.company
 
     def __str__(self):
-        return '%s at %s' % self.name.capitalize(), self.company
+        return '%s at %s' % (self.role.capitalize(), self.company)
 
 
 class Language(models.Model):
