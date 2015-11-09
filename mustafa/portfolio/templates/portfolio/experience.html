@@ -1,4 +1,5 @@
 {% extends "portfolio/base.html" %}
+{% load experience_extras %}
 {% load staticfiles %}
 {% block extrastyles %}<link rel="stylesheet" type="text/css" href="{% static "portfolio/css/portfolio-experience.css" %}">{% endblock %}
 {% block extrafonts %}<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>{% endblock %}
@@ -19,6 +20,17 @@
                         {% elif experience.end_date and not experience.start_date%}{{ experience.end_date }}
                         {% endif %}
                     </div>
+                </div>
+                <div class="row">
+                    {% with used_languages|get_item:experience as experience_used_languages %}
+                    {% if experience_used_languages %}
+                    <div class="twelve columns tags">
+                        {% for language in experience_used_languages %}
+                        <span class="tag">{{ language }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
                 </div>
                 <div class="row">
                     <div class="twelve columns description"><p>{{ experience.description }}</p></div>

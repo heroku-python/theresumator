@@ -1,4 +1,5 @@
 {% extends "portfolio/base.html" %}
+{% load projects_extras %}
 {% load staticfiles %}
 {% block extrastyles %}<link rel="stylesheet" type="text/css" href="{% static "portfolio/css/portfolio-projects.css" %}">{% endblock %}
 {% block extrafonts %}<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>{% endblock %}
@@ -19,6 +20,17 @@
                         {% elif project.end_date and not project.start_date%}{{ project.end_date }}
                         {% endif %}
                     </div>
+                </div>
+                <div class="row">
+                    {% with used_languages|get_item:project as project_used_languages %}
+                    {% if project_used_languages %}
+                    <div class="twelve columns tags">
+                        {% for language in project_used_languages %}
+                        <span class="tag">{{ language }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
                 </div>
                 <div class="row">
                     <div class="twelve columns description"><p>{{ project.description }}</p></div>

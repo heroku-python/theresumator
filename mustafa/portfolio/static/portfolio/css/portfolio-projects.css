@@ -26,4 +26,6 @@
     overflow:hidden;
     text-overflow:ellipsis;
 }
-
+.portfolio-project .tags{
+    margin-bottom: 10px;
+}

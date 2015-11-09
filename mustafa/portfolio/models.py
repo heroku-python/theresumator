@@ -1,6 +1,7 @@
 from django.db import models
 from solo.models import SingletonModel
 from django.utils.translation import ugettext_lazy as _
+from django.core.exceptions import ObjectDoesNotExist
 
 
 class BasicInformation(SingletonModel):
@@ -70,6 +71,17 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
+    def get_languages(self):
+        languages = Language.objects.all()
+        used_languages = []
+        for language in languages:
+            try:
+                language.projects.get(pk=self.pk)
+                used_languages.append(language)
+            except ObjectDoesNotExist:
+                pass
+        return {self: used_languages}
+
 
 class Experience(models.Model):
     company = models.CharField(max_length=50)
@@ -83,12 +95,22 @@ class Experience(models.Model):
     link = models.URLField(blank=True)
     image = models.ImageField(blank=True)
 
-
     def __repr__(self):
         return '<Experience: %s>' % self.company
 
     def __str__(self):
         return '%s at %s' % (self.role.capitalize(), self.company)
+
+    def get_languages(self):
+        languages = Language.objects.all()
+        used_languages = []
+        for language in languages:
+            try:
+                language.experience.get(pk=self.pk)
+                used_languages.append(language.name)
+            except ObjectDoesNotExist:
+                pass
+        return {self: used_languages}
 
 
 class Language(models.Model):

@@ -4,7 +4,6 @@ from django.template import RequestContext, loader
 from .models import BasicInformation
 from .models import Project
 from .models import Experience
-from .models import Language
 from .models import Publication
 
 from portfolio import utils
@@ -22,9 +21,13 @@ def about(request):
 def projects(request):
     basic_information = BasicInformation.objects.latest('pk')
     projects_list = Project.objects.all()
+    used_languages = {}
+    for project in projects_list:
+        used_languages.update(project.get_languages())
     template = loader.get_template('portfolio/projects.html')
     context_dict = {'portfolio_basicinformation': basic_information,
                     'portfolio_project': projects_list,
+                    'used_languages': used_languages,
                     }
     print context_dict
     context = RequestContext(request,
@@ -36,11 +39,13 @@ def projects(request):
 def experience(request):
     basic_information = BasicInformation.objects.latest('pk')
     experience_list = Experience.objects.all()
-    languages = Language.objects.all()
+    used_languages = {}
+    for experience in experience_list:
+        used_languages.update(experience.get_languages())
     template = loader.get_template('portfolio/experience.html')
     context_dict = {'portfolio_basicinformation': basic_information,
                     'portfolio_experience': experience_list,
-                    'portfolio_language': languages,
+                    'used_languages': used_languages,
                     }
     context = RequestContext(request,
                              utils.used_models(context_dict))
