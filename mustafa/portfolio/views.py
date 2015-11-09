@@ -5,6 +5,7 @@ from .models import BasicInformation
 from .models import Project
 from .models import Experience
 from .models import Publication
+from .models import Education
 
 from portfolio import utils
 
@@ -58,6 +59,18 @@ def publications(request):
     template = loader.get_template('portfolio/publications.html')
     context_dict = {'portfolio_basicinformation': basic_information,
                     'portfolio_publication': publication_list,
+                    }
+    context = RequestContext(request,
+                             utils.used_models(context_dict))
+    return HttpResponse(template.render(context))
+
+
+def education(request):
+    basic_information = BasicInformation.objects.latest('pk')
+    education_list = Education.objects.all()
+    template = loader.get_template('portfolio/education.html')
+    context_dict = {'portfolio_basicinformation': basic_information,
+                    'portfolio_education': education_list,
                     }
     context = RequestContext(request,
                              utils.used_models(context_dict))

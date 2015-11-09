@@ -1,0 +1,32 @@
+{% extends "portfolio/base.html" %}
+{% load staticfiles %}
+{% block extrastyles %}<link rel="stylesheet" type="text/css" href="{% static "portfolio/css/portfolio-education.css" %}">{% endblock %}
+{% block extrafonts %}<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>{% endblock %}
+
+{% block title %}Mustafa S{% endblock %}
+
+{% block extracontent %}
+    <h5>Education</h5>
+    {% for education in portfolio_education %}
+    <div class="row portfolio-education">
+        <div class="ten columns">
+            <div class="row">
+                <div class="seven columns limit"><b>{{ education.name }}</b></div>
+                <div class="five columns date right-text">
+                    {% if education.start_date and not education.end_date%}{{ education.start_date }} - <i>Today</i>
+                    {% elif education.start_date and education.end_date%}{{ education.start_date }} - {{ education.end_date }}
+                    {% elif education.end_date and not education.start_date%}{{ education.end_date }}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                 <div class="seven columns">{{ education }}</div>
+                <div class="five columns number right-text"> GPA: {{ education.gpa }}</div>
+            </div>
+            <div class="row">
+                <div class="twelve columns conference"><p>{{ education.conference }}</p></div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

@@ -12,7 +12,7 @@
         {% if publication.link %}<a href="{{ publication.link }}">{% endif %}
             <div class="eleven columns">
                 <div class="row">
-                    <div class="ten columns limit"><b>{{ publication.title }}</b></div>
+                    <div class="ten columns limit"><b>{{ publication }}</b></div>
                     <div class="two columns date right-text">
                         {% if publication.year %}{{ publication.year }}{% endif %}
                     </div>
@@ -30,5 +30,4 @@
         {% if publication.link %}</a>{% endif %}
     </div>
     {% endfor %}
-
 {% endblock %}

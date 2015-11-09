@@ -1,0 +1,34 @@
+.portfolio-education{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #555555;
+}
+.portfolio-education a,
+.portfolio-education a{
+    color: #555555;
+}
+.portfolio-education a:hover,
+.portfolio-education a:hover{
+    color: #000000;
+}
+.portfolio-education .authors,
+.portfolio-education .conference,
+.portfolio-education p{
+    font-size: 14px;
+}
+.portfolio-education p{
+    font-size: 14px;
+}
+.portfolio-education .description{
+    min-height: 120px;
+    border-bottom: thin solid #eeeeee;
+}
+.portfolio-education .date,
+.portfolio-education .number{
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+.portfolio-education .limit{
+    overflow:hidden;
+    text-overflow:ellipsis;
+}

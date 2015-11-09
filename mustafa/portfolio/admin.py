@@ -7,12 +7,15 @@ from models import Project
 from models import Experience
 from models import Language
 from models import Publication
+from models import Education
+
 
 admin.site.register(BasicInformation, SingletonModelAdmin)
 admin.site.register(Project)
 admin.site.register(Experience)
 admin.site.register(Language)
 admin.site.register(Publication)
+admin.site.register(Education)
 
 
 # make BasicInformation singleton if it does not already exist
