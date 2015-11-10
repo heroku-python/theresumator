@@ -6,28 +6,28 @@
 {% block title %}Mustafa S{% endblock %}
 
 {% block extracontent %}
-    <h5>Publications</h5>
-    {% for publication in resumator_publication %}
-    <div class="row resumator-publication">
-        {% if publication.link %}<a href="{{ publication.link }}">{% endif %}
-            <div class="eleven columns">
-                <div class="row">
-                    <div class="ten columns limit"><b>{{ publication }}</b></div>
-                    <div class="two columns date right-text">
-                        {% if publication.year %}{{ publication.year }}{% endif %}
-                    </div>
+                <h5>Publications</h5>
+                {% for publication in resumator_publication %}
+                <div class="row resumator-publication">
+                    {% if publication.link %}<a href="{{ publication.link }}">{% endif %}
+                        <div class="eleven columns">
+                            <div class="row">
+                                <div class="ten columns limit"><b>{{ publication }}</b></div>
+                                <div class="two columns date right-text">
+                                    {% if publication.year %}{{ publication.year }}{% endif %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="twelve columns authors">{{ publication.authors }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="twelve columns conference"><p>{{ publication.conference }}</p></div>
+                            </div>
+                            <div class="row">
+                                <div class="twelve columns description">{% spaceless %}<p>{{ publication.abstract }}</p>{% endspaceless %}</div>
+                            </div>
+                        </div>
+                    {% if publication.link %}</a>{% endif %}
                 </div>
-                <div class="row">
-                    <div class="twelve columns authors">{{ publication.authors }}</div>
-                </div>
-                <div class="row">
-                    <div class="twelve columns conference"><p>{{ publication.conference }}</p></div>
-                </div>
-                <div class="row">
-                    <div class="twelve columns description"><p>{{ publication.abstract }}</p></div>
-                </div>
-            </div>
-        {% if publication.link %}</a>{% endif %}
-    </div>
-    {% endfor %}
+                {% endfor %}
 {% endblock %}

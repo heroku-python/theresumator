@@ -54,7 +54,7 @@ Email: AmmsA@users.noreply.github.com
                     <div class="row">
                         <div class="eleven columns">
                             <img class="thumbnail-container img-circle"
-                                 src="{% static "resumator/img/profile_picture_yaOhbcR.jpeg" %}">
+                                 src="{{ resumator_basicinformation.image }}">
                         </div>
                     </div>
                     {% endif %}
@@ -135,13 +135,13 @@ Email: AmmsA@users.noreply.github.com
                 {% block extrasidebar %}{% endblock %}
             </div>
             <div class="eight columns content">
-                {% spaceless %}{% block extracontent %}
+                {% block extracontent %}
                 <h5>Main content</h5>
                 <p>
                    This is where the main content of the website goes. If you need some help, please go to
                     <a href="https://github.com/AmmsA/resumator">resumator github page</a>.
                 </p>
-                {% endblock %}{% endspaceless %}
+                {% endblock %}
             </div>
         </div>
     </div>

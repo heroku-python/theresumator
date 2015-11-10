@@ -7,36 +7,36 @@
 {% block title %}Mustafa S{% endblock %}
 
 {% block extracontent %}
-    <h5>Projects</h5>
-    {% for project in resumator_project %}
-    <div class="row resumator-project">
-        {% if project.link %}<a href="{{ project.link }}">{% endif %}
-            <div class="eleven columns">
-                <div class="row">
-                    <div class="seven columns limit"><b>{{ project }}</b></div>
-                    <div class="five columns date right-text">
-                        {% if project.start_date and not project.end_date%}{{ project.start_date }} - <i>Ongoing</i>
-                        {% elif project.start_date and project.end_date%}{{ project.start_date }} - {{ project.end_date }}
-                        {% elif project.end_date and not project.start_date%}{{ project.end_date }}
-                        {% endif %}
-                    </div>
+                <h5>Projects</h5>
+                {% for project in resumator_project %}
+                <div class="row resumator-project">
+                    {% if project.link %}<a href="{{ project.link }}">{% endif %}
+                        <div class="eleven columns">
+                            <div class="row">
+                                <div class="seven columns limit"><b>{{ project }}</b></div>
+                                <div class="five columns date right-text">
+                                    {% if project.start_date and not project.end_date%}{{ project.start_date }} - <i>Ongoing</i>
+                                    {% elif project.start_date and project.end_date%}{{ project.start_date }} - {{ project.end_date }}
+                                    {% elif project.end_date and not project.start_date%}{{ project.end_date }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                {% with used_languages|get_item:project as project_used_languages %}
+                                {% if project_used_languages %}
+                                <div class="twelve columns tags">
+                                    {% for language in project_used_languages %}
+                                    <span class="tag">{{ language }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                                {% endwith %}
+                            </div>
+                            <div class="row">
+                                <div class="twelve columns description">{% spaceless %}<p>{{ project.description }}{% endspaceless %}</p></div>
+                            </div>
+                        </div>
+                    {% if project.link %}</a>{% endif %}
                 </div>
-                <div class="row">
-                    {% with used_languages|get_item:project as project_used_languages %}
-                    {% if project_used_languages %}
-                    <div class="twelve columns tags">
-                        {% for language in project_used_languages %}
-                        <span class="tag">{{ language }}</span>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                    {% endwith %}
-                </div>
-                <div class="row">
-                    <div class="twelve columns description"><p>{{ project.description }}</p></div>
-                </div>
-            </div>
-        {% if project.link %}</a>{% endif %}
-    </div>
-    {% endfor %}
+                {% endfor %}
 {% endblock %}
