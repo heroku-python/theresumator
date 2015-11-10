@@ -7,7 +7,7 @@ Right now, theresumator supports the following models:
 * Expereince (Your work/research experience)
 * Publications (research papers you've published or contributed to)
 
-Need an example of how it would look like? click [here]() to see a sample.
+Need an example of how it would look like? click [here](http://ammsa.herokuapp.com/) to see a sample.
 
 ## Contributing
 
