@@ -54,7 +54,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'mustafa.urls'
+ROOT_URLCONF = 'theresumator.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mustafa.wsgi.application'
+WSGI_APPLICATION = 'theresumator.wsgi.application'
 
 
 # Database

@@ -11,7 +11,7 @@ Email: AmmsA@users.noreply.github.com
     <!-- Basic Page Needs
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{{ resumator_basicinformation.name }}{% endblock %}</title>
     <meta name="description"
           content="{% block metadescription %}resumator page of {{ resumator_basicinformation.name }} containing personal projects and experiences{% endblock %}">
     <meta name="author" content="{% block metaauthor %}{{ resumator_basicinformation.name }}{% endblock %}">
@@ -54,7 +54,7 @@ Email: AmmsA@users.noreply.github.com
                     <div class="row">
                         <div class="eleven columns">
                             <img class="thumbnail-container img-circle"
-                                 src="{{ resumator_basicinformation.image }}">
+                                 src="/{{ MEDIA_URL }}{{ resumator_basicinformation.image }}">
                         </div>
                     </div>
                     {% endif %}
