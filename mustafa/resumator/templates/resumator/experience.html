@@ -1,15 +1,15 @@
-{% extends "portfolio/base.html" %}
+{% extends "resumator/base.html" %}
 {% load experience_extras %}
 {% load staticfiles %}
-{% block extrastyles %}<link rel="stylesheet" type="text/css" href="{% static "portfolio/css/portfolio-experience.css" %}">{% endblock %}
+{% block extrastyles %}<link rel="stylesheet" type="text/css" href="{% static "resumator/css/resumator-experience.css" %}">{% endblock %}
 {% block extrafonts %}<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>{% endblock %}
 
 {% block title %}Mustafa S{% endblock %}
 
 {% block extracontent %}
     <h5>Experience</h5>
-    {% for experience in portfolio_experience %}
-    <div class="row portfolio-experience">
+    {% for experience in resumator_experience %}
+    <div class="row resumator-experience">
         {% if experience.link %}<a href="{{ experience.link }}">{% endif %}
             <div class="ten columns">
                 <div class="row">
@@ -36,11 +36,6 @@
                     <div class="twelve columns description"><p>{{ experience.description }}</p></div>
                 </div>
             </div>
-        {% if experience.company %}
-            <div class="two columns image">
-                <img src="{% static "portfolio/img/uvic.jpg" %}">
-            </div>
-        {% endif %}
         {% if experience.link %}</a>{% endif %}
     </div>
     {% endfor %}

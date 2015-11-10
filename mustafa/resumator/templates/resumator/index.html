@@ -1,0 +1,8 @@
+{% extends "resumator/base.html" %}
+
+{% block title %}Mustafa S{% endblock %}
+
+{% block extracontent %}
+    <h5>About {{ resumator_basicinformation.name }}</h5>
+    {{ resumator_basicinformation.long_bio | safe}}
+{% endblock %}

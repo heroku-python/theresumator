@@ -1,14 +1,14 @@
-{% extends "portfolio/base.html" %}
+{% extends "resumator/base.html" %}
 {% load staticfiles %}
-{% block extrastyles %}<link rel="stylesheet" type="text/css" href="{% static "portfolio/css/portfolio-publications.css" %}">{% endblock %}
+{% block extrastyles %}<link rel="stylesheet" type="text/css" href="{% static "resumator/css/resumator-publications.css" %}">{% endblock %}
 {% block extrafonts %}<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>{% endblock %}
 
 {% block title %}Mustafa S{% endblock %}
 
 {% block extracontent %}
     <h5>Publications</h5>
-    {% for publication in portfolio_publication %}
-    <div class="row portfolio-publication">
+    {% for publication in resumator_publication %}
+    <div class="row resumator-publication">
         {% if publication.link %}<a href="{{ publication.link }}">{% endif %}
             <div class="eleven columns">
                 <div class="row">

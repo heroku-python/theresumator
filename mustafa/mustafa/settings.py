@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'portfolio',
+    'resumator',
 
     'solo',
 )
@@ -112,5 +112,5 @@ STATICFILES_DIRS = (
 
 
 FIXTURE_DIRS = (
-   '/portfolio/fixtures/',
+   '/resumator/fixtures/',
 )

@@ -1,39 +1,39 @@
-.portfolio-experience {
+.resumator-experience {
     margin-top: 10px;
     margin-bottom: 20px;
     color: #555555;
 }
-.portfolio-experience a,
-.portfolio-experience a{
+.resumator-experience a,
+.resumator-experience a{
     color: #555555;
 }
-.portfolio-experience a:hover,
-.portfolio-experience a:hover{
+.resumator-experience a:hover,
+.resumator-experience a:hover{
     color: #000000;
 }
-.portfolio-experience p{
+.resumator-experience p{
     font-size: 14px;
 }
-.portfolio-experience .description{
+.resumator-experience .description{
     min-height: 120px;
     border-bottom: thin solid #eeeeee;
 }
-.portfolio-experience .date{
+.resumator-experience .date{
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
 }
-.portfolio-experience .limit{
+.resumator-experience .limit{
     overflow:hidden;
     text-overflow:ellipsis;
 }
-.portfolio-experience .image{
+.resumator-experience .image{
     height:inherit;
 }
-.portfolio-experience img{
+.resumator-experience img{
     vertical-align: middle;
     width: 60px;
     height: 60px;
 }
-.portfolio-experience .tags{
+.resumator-experience .tags{
     margin-bottom: 10px;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load i18n %}{% load staticfiles %}{% load base_extras %}
 <!--
-Portfolio v{% get_version %} | MIT License | https://github.com/AmmsA/portfolio
+Resumator v{% get_version %} | MIT License | https://github.com/AmmsA/resumator
 Author: Mustafa S
 Email: AmmsA@users.noreply.github.com
 -->
@@ -13,8 +13,8 @@ Email: AmmsA@users.noreply.github.com
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <meta name="description"
-          content="{% block metadescription %}Portfolio page of {{ portfolio_basicinformation.name }} containing personal projects and experiences{% endblock %}">
-    <meta name="author" content="{% block metaauthor %}{{ portfolio_basicinformation.name }}{% endblock %}">
+          content="{% block metadescription %}resumator page of {{ resumator_basicinformation.name }} containing personal projects and experiences{% endblock %}">
+    <meta name="author" content="{% block metaauthor %}{{ resumator_basicinformation.name }}{% endblock %}">
 
     <!-- Mobile Specific Metas
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -27,16 +27,16 @@ Email: AmmsA@users.noreply.github.com
 
     <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/normalize.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/skeleton.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "resumator/css/normalize.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "resumator/css/skeleton.css" %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.0.2/css/hover-min.css">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static "portfolio/css/base.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "resumator/css/base.css" %}">
     {% block extrastyles %}{% endblock %}
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="icon" type="image/png" href="{% static "portfolio/img/favicon.png" %}">
+    <link rel="icon" type="image/png" href="{% static "resumator/img/favicon.png" %}">
     {% block blockbots %}
     <meta name="robots" content="nocache,noarchive,noimageindex"/>
     {% endblock %}
@@ -50,21 +50,21 @@ Email: AmmsA@users.noreply.github.com
         <div class="row whole-content" >
             <div class="four columns side-line side-bar">
                 <div class="thumbnail">
-                    {% if portfolio_basicinformation.image != None %}
+                    {% if resumator_basicinformation.image != None %}
                     <div class="row">
                         <div class="eleven columns">
                             <img class="thumbnail-container img-circle"
-                                 src="{% static "portfolio/img/profile_picture_yaOhbcR.jpeg" %}">
+                                 src="{% static "resumator/img/profile_picture_yaOhbcR.jpeg" %}">
                         </div>
                     </div>
                     {% endif %}
                     <div class="row">
-                        <div class="eleven columns"><h4>{{ portfolio_basicinformation.name }}</h4></div>
+                        <div class="eleven columns"><h4>{{ resumator_basicinformation.name }}</h4></div>
                     </div>
                 </div>
-                {% if portfolio_basicinformation.short_bio != None %}
+                {% if resumator_basicinformation.short_bio != None %}
                 <div class="side-bar-bio row">
-                    <div class="eleven columns">{{ portfolio_basicinformation.short_bio }}</div>
+                    <div class="eleven columns">{{ resumator_basicinformation.short_bio }}</div>
                 </div>
                 {% endif %}
                 <div class="side-bar-items">
@@ -74,7 +74,7 @@ Email: AmmsA@users.noreply.github.com
                             <div class="nine columns">About</div>
                         </div>
                     </a>
-                    {% if portfolio_education %}
+                    {% if resumator_education %}
                     <a href="/education">
                         <div class="row side-bar-item hvr-grow">
                             <div class="two columns side-bar-icon"><span class="lnr lnr-graduation-hat"></span></div>
@@ -83,7 +83,7 @@ Email: AmmsA@users.noreply.github.com
                     </a>
                     <a href="/">
                     {% endif %}
-                    {% if portfolio_project %}
+                    {% if resumator_project %}
                     <a href="/projects">
                         <div class="row side-bar-item hvr-grow">
                             <div class="two columns side-bar-icon"><span class="lnr lnr-code"></span></div>
@@ -91,7 +91,7 @@ Email: AmmsA@users.noreply.github.com
                         </div>
                     </a>
                     {% endif %}
-                    {% if portfolio_experience %}
+                    {% if resumator_experience %}
                     <a href="/experience">
                         <div class="row side-bar-item hvr-grow">
                             <div class="two columns side-bar-icon"><span class="lnr lnr-briefcase"></span></div>
@@ -99,7 +99,7 @@ Email: AmmsA@users.noreply.github.com
                         </div>
                     </a>
                     {% endif %}
-                    {% if portfolio_publication %}
+                    {% if resumator_publication %}
                     <a href="/publications">
                         <div class="row side-bar-item hvr-grow">
                             <div class="two columns side-bar-icon"><span class="lnr lnr-layers"></span></div>
@@ -107,22 +107,22 @@ Email: AmmsA@users.noreply.github.com
                         </div>
                     </a>
                     {% endif %}
-                    {% if portfolio_basicinformation.email != None or portfolio_basicinformation.github != None or portfolio_basicinformation.linkedin != None%}
+                    {% if resumator_basicinformation.email != None or resumator_basicinformation.github != None or resumator_basicinformation.linkedin != None%}
                     <div class="side-bar-links">
-                        <a href="mailto:{{ portfolio_basicinformation.email }}">
+                        <a href="mailto:{{ resumator_basicinformation.email }}">
                             <div class="row side-bar-item hvr-grow">
                                 <div class="two columns side-bar-icon"><span class="lnr lnr-envelope"></span></div>
                                 <div class="nine columns">Email</div>
                             </div>
                         </a>
-                        <a href="{{ portfolio_basicinformation.github }}">
+                        <a href="{{ resumator_basicinformation.github }}">
                             <div class="row side-bar-item hvr-grow">
                                 <div class="two columns side-bar-icon"><span class="lnr lnr-link"></span></div>
                                 <div class="nine columns">Github</div>
                             </div>
                         </a>
-                        {% if portfolio_basicinformation.linkedin != None %}
-                        <a href="{{ portfolio_basicinformation.linkedin}}">
+                        {% if resumator_basicinformation.linkedin != None %}
+                        <a href="{{ resumator_basicinformation.linkedin}}">
                             <div class="row side-bar-item hvr-grow">
                                 <div class="two columns side-bar-icon"><span class="lnr lnr-link"></span></div>
                                 <div class="nine columns">LinkedIn</div>
@@ -139,7 +139,7 @@ Email: AmmsA@users.noreply.github.com
                 <h5>Main content</h5>
                 <p>
                    This is where the main content of the website goes. If you need some help, please go to
-                    <a href="https://github.com/AmmsA/portfolio">Portfolio github page</a>.
+                    <a href="https://github.com/AmmsA/resumator">resumator github page</a>.
                 </p>
                 {% endblock %}{% endspaceless %}
             </div>

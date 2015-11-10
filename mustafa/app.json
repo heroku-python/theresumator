@@ -1,0 +1,6 @@
+{
+  "name": "Resumator",
+  "description": "A Resumator Website",
+  "repository": "https://github.com/AmmsA/resumator",
+  "keywords": ["django", "resumator"]
+}

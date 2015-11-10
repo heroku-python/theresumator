@@ -1,8 +1,0 @@
-{% extends "portfolio/base.html" %}
-
-{% block title %}Mustafa S{% endblock %}
-
-{% block extracontent %}
-    <h5>About {{ portfolio_basicinformation.name }}</h5>
-    {{ portfolio_basicinformation.long_bio | safe}}
-{% endblock %}

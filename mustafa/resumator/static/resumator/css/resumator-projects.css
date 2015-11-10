@@ -1,31 +1,31 @@
-.portfolio-project{
+.resumator-project{
     margin-top: 10px;
     margin-bottom: 20px;
     color: #555555;
 }
-.portfolio-project a,
-.portfolio-project a{
+.resumator-project a,
+.resumator-project a{
     color: #555555;
 }
-.portfolio-project a:hover,
-.portfolio-project a:hover{
+.resumator-project a:hover,
+.resumator-project a:hover{
     color: #000000;
 }
-.portfolio-project p{
+.resumator-project p{
     font-size: 14px;
 }
-.portfolio-project .description{
+.resumator-project .description{
     min-height: 120px;
     border-bottom: thin solid #eeeeee;
 }
-.portfolio-project .date{
+.resumator-project .date{
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
 }
-.portfolio-project .limit{
+.resumator-project .limit{
     overflow:hidden;
     text-overflow:ellipsis;
 }
-.portfolio-project .tags{
+.resumator-project .tags{
     margin-bottom: 10px;
 }

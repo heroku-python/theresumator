@@ -10,7 +10,7 @@ def used_models(context_dict, ignore_models=None):
                               if they have atleast a single instance in db.
                               Ignores models in `ignore_models`
         """
-        app_models = apps.get_app_config('portfolio').get_models()
+        app_models = apps.get_app_config('resumator').get_models()
         for model in app_models:
             if model._meta.db_table in context_dict or \
                ignore_models and model._meta.db_table in ignore_models:

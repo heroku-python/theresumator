@@ -1,14 +1,14 @@
-{% extends "portfolio/base.html" %}
+{% extends "resumator/base.html" %}
 {% load staticfiles %}
-{% block extrastyles %}<link rel="stylesheet" type="text/css" href="{% static "portfolio/css/portfolio-education.css" %}">{% endblock %}
+{% block extrastyles %}<link rel="stylesheet" type="text/css" href="{% static "resumator/css/resumator-education.css" %}">{% endblock %}
 {% block extrafonts %}<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>{% endblock %}
 
 {% block title %}Mustafa S{% endblock %}
 
 {% block extracontent %}
     <h5>Education</h5>
-    {% for education in portfolio_education %}
-    <div class="row portfolio-education">
+    {% for education in resumator_education %}
+    <div class="row resumator-education">
         <div class="ten columns">
             <div class="row">
                 <div class="seven columns limit"><b>{{ education.name }}</b></div>
@@ -19,12 +19,11 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="row">
+            <div class="row description">
                  <div class="seven columns">{{ education }}</div>
+                {% if education.gpa %}
                 <div class="five columns number right-text"> GPA: {{ education.gpa }}</div>
-            </div>
-            <div class="row">
-                <div class="twelve columns conference"><p>{{ education.conference }}</p></div>
+                {% endif %}
             </div>
         </div>
     </div>

@@ -1,9 +1,9 @@
 from django import template
-import portfolio
+import resumator
 
 register = template.Library()
 
 
 @register.simple_tag
 def get_version():
-    return portfolio.__version__
+    return resumator.__version__
