@@ -146,13 +146,9 @@ class Experience(models.Model):
 class Language(models.Model):
     name = models.CharField(max_length=50)
     experience = models.ManyToManyField(Experience,
-                                        null=True,
-                                        blank=True,
-                                        default=None)
+                                        blank=True)
     projects = models.ManyToManyField(Project,
-                                      null=True,
-                                      blank=True,
-                                      default=None)
+                                      blank=True)
 
     def __repr__(self):
         return '<Language: %s>' % self.name
