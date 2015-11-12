@@ -20,5 +20,5 @@ Need a live example of how it would look like? click [here](http://ammsa.herokua
 
 ## License
 
-All parts of theresumator are free to use and abuse under the [open-source MIT license](https://github.com/AmmsA/theresumator/blob/master/LICENSE.md).
+All parts of theresumator are free to use and abuse under the [open-source MIT license](https://github.com/AmmsA/theresumator/blob/master/LICENSE).
 
