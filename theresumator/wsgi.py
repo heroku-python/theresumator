@@ -1,5 +1,5 @@
 """
-WSGI config for mustafa project.
+WSGI config for theresumator project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
