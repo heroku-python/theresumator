@@ -1,1 +1,1 @@
-web: newrelic-admin run-program python manage.py run_gunicorn
+web: gunicorn theresumator.wsgi --log-file -

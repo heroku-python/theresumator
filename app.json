@@ -2,7 +2,7 @@
   "name": "theresumator",
   "description": "A Resumator Website",
   "repository": "https://github.com/AmmsA/resumator",
-  "keywords": ["python", "django", "resumator"]
+  "keywords": ["python", "django", "resumator"],
   "env": {
     "DJANGO_SECRET_KEY": {
       "description": "A randomly generated secret to secure your Django installation",
