@@ -7,12 +7,15 @@
     "DJANGO_SECRET_KEY": {
       "description": "A randomly generated secret to secure your Django installation",
       "generator": "secret"
+    },
+    "ADMIN_USER": {
+      "description": "Admin username. Note: you can change it later by going to /admin page"
+    },
+    "ADMIN_PASSWORD": {
+      "description": "Admin password. Note: you can change it later by going to /admin page"
     }
   },
-  "addons": [
-    "newrelic:stark"
-  ],
   "scripts": {
-    "postdeploy": "sh -c 'python manage.py syncdb --noinput; python manage.py migrate --noinput'"
+    "postdeploy": "sh -c 'python manage.py syncdb --noinput; python manage.py migrate --noinput; python manage.py runscript create_admin'"
   }
 }

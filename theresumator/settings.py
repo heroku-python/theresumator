@@ -21,10 +21,14 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'f1nkik(4d#)r4zbh2+p($8+vd1z_z_#+f(2o&s7*fuk-cj#)l)'
-
+if "DJANGO_SECRET_KEY" in os.environ:
+    SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+else:
+    import random
+    SECRET_KEY = ''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)])
+    
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -42,7 +46,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'resumator',
-
+    
+    'django_extensions',
     'solo',
 )
 
