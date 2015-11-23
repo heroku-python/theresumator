@@ -6,7 +6,7 @@ Need a web resume? You came to the right place! theresumator is a Django project
 Right now, theresumator supports the following models: 
 * Education (for your education info)
 * Projects (Personal or work projects you worked on)
-* Expereince (Your work/research experience)
+* Experience (Your work/research experience)
 * Publications (research papers you've published or contributed to)
 
 Need a live example of how it would look like? click [here](https://django-resumator.herokuapp.com/) to see a sample.
