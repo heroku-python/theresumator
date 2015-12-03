@@ -16,6 +16,6 @@
     }
   },
   "scripts": {
-    "postdeploy": "sh -c 'python manage.py syncdb --noinput; python manage.py migrate --noinput; python manage.py runscript create_admin'"
+    "postdeploy": "sh -c 'python manage.py syncdb --noinput; python manage.py migrate --noinput; python manage.py runscript create_admin create_baseuser'"
   }
 }
