@@ -26,7 +26,7 @@ if "DJANGO_SECRET_KEY" in os.environ:
 else:
     import random
     SECRET_KEY = ''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)])
-    
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -46,10 +46,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'resumator',
-    
+
     'django_extensions',
     'solo',
-)
+    'andablog',
+    'markitup',  # For andablog entry content
+    'taggit',  # For andablog entry tags
+    )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -77,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.template.context_processors.static',
                 'django.contrib.messages.context_processors.messages',
+                'theresumator.context_processors.global_item',
             ],
         },
     },
@@ -121,3 +125,7 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'site_media')
 MEDIA_URL = '/media/'
+
+
+MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
+MARKITUP_SET = 'markitup/sets/markdown'

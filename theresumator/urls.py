@@ -20,6 +20,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^', include('resumator.urls')),
+    url(r'^blog/', include('andablog.urls', namespace='andablog')),
+    url(r'^markitup/', include('markitup.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True, }),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, 'show_indexes': True, }),
