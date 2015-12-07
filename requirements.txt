@@ -12,5 +12,6 @@ Pillow==3.0.0
 psycopg2==2.6.1
 static3==0.6.1
 wheel==0.24.0
+Markdown==2.6.5
 django-andablog==2.0.0
 django-extensions
