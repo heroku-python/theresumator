@@ -1,7 +1,7 @@
 # ![theresumator](http://getskeleton.com/images/feather.svg) theresumator  <sub><sup><sub> using [django-resumator](https://github.com/AmmsA/django-resumator/)</sup></sub></sup>
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Need a web resume? You came to the right place! theresumator is a Django project for creating a resume dedicated to people in computer science/engineering. it's built to be lightweight, simple, and organized enough to be resuable by other people, and easily configured for your needs.
+Need a web resume? You came to the right place! theresumator is a Django project for creating a resume dedicated to people in computer science/engineering. it's built to be lightweight, simple, and organized enough to be reusable by other people, and easily configured for your needs.
 
 Right now, theresumator supports the following models: 
 * Education (for your education info)
