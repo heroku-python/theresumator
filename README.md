@@ -12,6 +12,17 @@ Right now, theresumator supports the following models:
 Need a live example of how it would look like? click [here](https://django-resumator.herokuapp.com/) to see a sample.  (note: may take awhile because it's under heroku's free plan)
 [![](https://cloud.githubusercontent.com/assets/748271/11058151/802d9360-8745-11e5-87db-e91806c8a8c4.png)](https://django-resumator.herokuapp.com/)
 
+## How to deploy
+1. Click on the deploy to Heroku button above.
+2. Name your application (e.g. `https://<NAME>.herokuapp.com`). You can change it to have use your own domain but that's a little tricky. Please look at the heroku documentation for more information on how to do it.
+![](https://raw.githubusercontent.com/AmmsA/theresumator/master/github_images/app_name.png)
+3. Write down a username and password for your app. This is going to be used for accessing the admin page (e.g. `https://<app_name>.herokuapp.com/admin`) to change and update your resume.
+![](https://raw.githubusercontent.com/AmmsA/theresumator/master/github_images/passwords.png)
+4. Click on the deploy button and wait for the application to be built and deployed.
+5. After you've successfully deployed the app, from your heroku app page, go under the settings and click on the reveal config vars button and make sure you delete the `ADMIN_PASSWORD` and `ADMIN_USER` config variables as they are no longer needed.
+![](https://raw.githubusercontent.com/AmmsA/theresumator/master/github_images/config_vars.png)
+
+
 ## Contributing
 
 1. Fork it!
