@@ -10,8 +10,8 @@ Right now, theresumator supports the following models:
 * Publications (research papers you've published or contributed to)
 
 =======
-Need a live example of how it would look like? click [here](https://django-resumator.herokuapp.com/) to see a sample.
-[![](https://cloud.githubusercontent.com/assets/748271/11058151/802d9360-8745-11e5-87db-e91806c8a8c4.png)](https://django-resumator.herokuapp.com/) (note: may take awhile because it's under heroku's free plan)
+Need a live example of how it would look like? click [here](https://django-resumator.herokuapp.com/) to see a sample.  (note: may take awhile because it's under heroku's free plan)
+[![](https://cloud.githubusercontent.com/assets/748271/11058151/802d9360-8745-11e5-87db-e91806c8a8c4.png)](https://django-resumator.herokuapp.com/)
 
 ## Contributing
 
