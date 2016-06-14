@@ -1,7 +1,7 @@
 {
   "name": "theresumator",
   "description": "A Resumator Website",
-  "repository": "https://github.com/AmmsA/resumator",
+  "repository": "https://github.com/AmmsA/theresumator",
   "keywords": ["python", "django", "resumator"],
   "env": {
     "DJANGO_SECRET_KEY": {
