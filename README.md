@@ -1,15 +1,16 @@
-# ![theresumator](http://getskeleton.com/images/feather.svg) theresumator  <sub><sup><sub> using [django-resumator](https://github.com/AmmsA/django-resumator/)</sup></sub></sup>
+# theresumator  <sub><sup><sub> using [django-resumator](https://github.com/AmmsA/django-resumator/)</sup></sub></sup>
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Need a web resume? You came to the right place! theresumator is a Django project for creating a resume dedicated to people in computer science/engineering. it's built to be lightweight, simple, and organized enough to be reusable by other people, and easily configured for your needs.
+Need a web resume? You came to the right place! theresumator is a Django project for creating resumes dedicated to people in computer science/engineering. It's built to be lightweight, simple, and organized enough to be reusable by other people in other fields, and easily configured for your needs.
 
 Right now, theresumator supports the following models: 
+* Resume (a link to your PDF resume, if specified)
 * Education (for your education info)
 * Projects (Personal or work projects you worked on)
 * Experience (Your work/research experience)
 * Publications (research papers you've published or contributed to)
 
-Need a live example of how it would look like? click [here](https://django-resumator.herokuapp.com/) to see a sample.  (note: may take awhile because it's under heroku's free plan)
+Need a live example of how it looks like? click [here](https://django-resumator.herokuapp.com/) to see a sample.  (note: may take awhile because it's under heroku's free plan)
 [![](https://cloud.githubusercontent.com/assets/748271/11058151/802d9360-8745-11e5-87db-e91806c8a8c4.png)](https://django-resumator.herokuapp.com/)
 
 ## How to deploy
